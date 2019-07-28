@@ -1,10 +1,5 @@
 
 import { Component, Vue } from "vue-property-decorator"
 
-
 @Component
-export class Header extends Vue {
-  public mounted() {
-    console.log('test');
-  }
-}
+export class Header extends Vue {}

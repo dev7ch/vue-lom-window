@@ -22,7 +22,7 @@ This package is an implementation of window UI for PC environment as a Vue Compo
 # Usage
 ## Install
 ```sh
-npm install --save @hscmap/vue-window
+npm install --save @dev7ch/vue-lom-window
 ```
 
 ## Setup
@@ -30,7 +30,7 @@ npm install --save @hscmap/vue-window
 ### ES6 / TypeScript
 ```typescript
 import Vue from 'vue'
-import * as VueWindow from '@hscmap/vue-window'
+import * as VueWindow from '@dev7ch/vue-lom-window'
 
 Vue.use(VueWindow)
 ```
@@ -38,7 +38,7 @@ Vue.use(VueWindow)
 ### CommonJS
 ```javascript
 var Vue = require('vue')
-Vue.use(require('@hscmap/vue-window'))
+Vue.use(require('@dev7ch/vue-lom-window'))
 ```
 
 # Example

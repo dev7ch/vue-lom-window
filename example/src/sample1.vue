@@ -1,7 +1,7 @@
 <template>
   <lom-window-default>
 
-    <lom-window uid="11" title="Window 1" :positionHints="'query'">
+    <lom-window uid="11" title="Window 1" positionHints="query">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>

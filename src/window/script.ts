@@ -18,7 +18,6 @@ interface Rect {
   height: number
 }
 
-
 @Component({
   components: { MyButton, MyHeader }
 })
@@ -64,16 +63,12 @@ export class WindowType extends Vue {
 
   private zIndex = 'auto'
 
-
   draggableHelper?: DraggableHelper
   resizableHelper?: ResizableHelper
 
   zElement!: ZElement
 
-
   mounted() {
-
-    console.log(this)
     instances.push(this)
     this.zElement = new ZElement(this.zGroup, zIndex => this.zIndex = `${zIndex}`)
     this.isOpen && this.onIsOpenChange(true)
@@ -97,9 +92,6 @@ export class WindowType extends Vue {
   }
 
   contentElement() {
-    return this.$refs.content as HTMLElement
-  }
-  queryParams() {
     return this.$refs.content as HTMLElement
   }
 
@@ -130,12 +122,6 @@ export class WindowType extends Vue {
     }
 
     return style;
-  }
-
-  @Watch('$route', { immediate: true, deep: true })
-  onUrlChange(newVal: any) {
-    // Some action
-    console.log(newVal)
   }
 
   @Watch('resizable')
@@ -299,7 +285,6 @@ export class WindowType extends Vue {
       const positionString = this.positionHint || 'auto'
       switch (positionString) {
         case 'query': {
-          console.log('dsfjlökdjflksdjflksdjfl')
           try {
             const nums = positionString.split('/').map(Number)
             if (nums.length != 2)

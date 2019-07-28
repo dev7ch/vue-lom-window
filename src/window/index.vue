@@ -9,14 +9,12 @@
             </template>
             <template v-else>{{title}}</template>
           </div>
-          <template v-slot:closeButton v-if="closeButton">
+          <template v-slot-scoped:closeButton v-if="closeButton">
             <my-button class="close" @click="closeButtonClick"></my-button>
           </template>
         </my-header>
       </div>
       <div class="content" :style="styleContent" ref="content">
-        {{ uid }}
-        {{ queryKey }}
         <slot />
       </div>
     </div>

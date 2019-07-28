@@ -1,7 +1,7 @@
 {
-  "name": "@digma/vue-lom-window",
-  "version": "2.4.1",
-  "description": "Vue component for window",
+  "name": "@dev7ch/vue-lom-window",
+  "version": "0.0.2",
+  "description": "Vue component for draggable windows in vue js",
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
   "files": [
@@ -17,7 +17,6 @@
     "gh-pages": "npm run example && npm run standalone && cp standalone/dist/vue-window-standalone.js example/dist && gh-pages -d example/dist"
   },
   "dependencies": {
-    "@hscmap/vue-menu": "^2.8.4",
     "tslib": "^1.9.3",
     "vue": "^2.6.3",
     "vue-class-component": "^6.3.2"
