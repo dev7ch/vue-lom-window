@@ -2,4 +2,4 @@
 /lib
 /standalone/dist
 .DS_Store
-.idea
+.idea/*
