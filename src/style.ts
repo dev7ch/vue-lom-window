@@ -29,6 +29,30 @@ export function StyleFactory(windowStyle: WindowStyle): vue.ComponentOptions<Vue
 }
 
 
+export const Default: vue.ComponentOptions<Vue> = StyleFactory({
+  window: {
+    border: '1px solid #ccc;',
+    color: '#000',
+    boxShadow: '0 0 2px rgba(007, 007, 007, 0.75)',
+    backgroundColor: '#efefef'
+  },
+  titlebar: {
+    backgroundColor: '#efefef'
+  },
+  content: {
+  },
+  button: {
+    color: '#000'
+  },
+  buttonHover: {
+    backgroundColor: 'transparent'
+  },
+  buttonActive: {
+    color: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  }
+})
+
 export const StyleBlack: vue.ComponentOptions<Vue> = StyleFactory({
   window: {
     color: '#fff',

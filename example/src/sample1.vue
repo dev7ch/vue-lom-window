@@ -1,7 +1,7 @@
 <template>
-  <lom-window-style-metal>
+  <lom-window-default>
 
-    <lom-window title="Window 1">
+    <lom-window uid="11" title="Window 1" :positionHints="'query'">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
@@ -13,7 +13,7 @@
       </fieldset>
     </lom-window>
 
-    <lom-window title="Window 2">
+    <lom-window uid="22" title="Window 2">
       Parameters:
       <fieldset>
         <legend>&gamma;</legend>
@@ -25,5 +25,5 @@
       </fieldset>
     </lom-window>
 
-  </lom-window-style-metal>
+  </lom-window-default>
 </template>

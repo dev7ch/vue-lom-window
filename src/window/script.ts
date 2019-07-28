@@ -5,7 +5,8 @@ import { ResizableHelper } from "../resizable_helper";
 import { WINDOW_STYLE_KEY, WindowStyle } from "../style";
 import { windows } from '../windows';
 import { ZElement } from "../z_element";
-import MyButton from '../button/index.vue'
+import MyHeader  from "./../header/index.vue";
+import MyButton from '../button/index.vue';
 
 const instances: WindowType[] = []
 
@@ -19,11 +20,17 @@ interface Rect {
 
 
 @Component({
-  components: { MyButton }
+  components: { MyButton, MyHeader }
 })
 export class WindowType extends Vue {
   @Prop({ type: Boolean, default: true })
   isOpen!: boolean
+
+  @Prop({ type: String })
+  uid!: string
+
+  @Prop({ type: String })
+  queryKey!: string
 
   @Prop({ type: String, default: '' })
   title!: string
@@ -57,12 +64,16 @@ export class WindowType extends Vue {
 
   private zIndex = 'auto'
 
+
   draggableHelper?: DraggableHelper
   resizableHelper?: ResizableHelper
 
   zElement!: ZElement
 
+
   mounted() {
+
+    console.log(this)
     instances.push(this)
     this.zElement = new ZElement(this.zGroup, zIndex => this.zIndex = `${zIndex}`)
     this.isOpen && this.onIsOpenChange(true)
@@ -86,6 +97,9 @@ export class WindowType extends Vue {
   }
 
   contentElement() {
+    return this.$refs.content as HTMLElement
+  }
+  queryParams() {
     return this.$refs.content as HTMLElement
   }
 
@@ -116,6 +130,12 @@ export class WindowType extends Vue {
     }
 
     return style;
+  }
+
+  @Watch('$route', { immediate: true, deep: true })
+  onUrlChange(newVal: any) {
+    // Some action
+    console.log(newVal)
   }
 
   @Watch('resizable')
@@ -278,8 +298,24 @@ export class WindowType extends Vue {
     else {
       const positionString = this.positionHint || 'auto'
       switch (positionString) {
-        case 'auto':
-          {
+        case 'query': {
+          console.log('dsfjlökdjflksdjflksdjfl')
+          try {
+            const nums = positionString.split('/').map(Number)
+            if (nums.length != 2)
+              throw null
+            const [x, y] = nums
+            if (!isFinite(x) || !isFinite(y))
+              throw null
+            left = x >= 0 ? x : window.innerWidth - width + 200 + x
+            top = y >= 0 ? y : window.innerHeight - height + y
+          }
+          catch (e) {
+            throw new Error(`invalid query string: ${positionString}`)
+          }
+          break
+        }
+        case 'auto': {
             let x = 20
             let y = 50
             let nTries = 0

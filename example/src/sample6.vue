@@ -1,17 +1,5 @@
 <template>
   <div>
-    <lom-menu-style-metal style="position: fixed; z-index: 2;">
-      <lom-menu-bar style="border-radius: 0 0 4pt 0">
-        <lom-menu-bar-item label="Number">
-          <lom-menu-item label="New Random Number" keybind="alt+n" @click="newRandomNumber" />
-          <lom-menu-item label="Clear" keybind="alt+k" @click="numberWindows=[]" />
-        </lom-menu-bar-item>
-        <lom-menu-bar-item label="Windows">
-          <lom-menu-item v-for="w of numberWindows" :key="w.id" :label="w.label" @click="w.isOpen=!w.isOpen" :checked="w.isOpen" />
-        </lom-menu-bar-item>
-      </lom-menu-bar>
-    </lom-menu-style-metal>
-
     <lom-window-style-metal style="position: fixed; z-index: 1">
       <lom-window v-for="w of numberWindows" :key="w.id" :title="w.label" :closeButton="true" :isOpen.sync="w.isOpen">
         <table>
@@ -38,12 +26,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import * as VueMenu from '@hscmap/vue-menu'
 import * as _ from 'lodash'
-
-
-Vue.use(VueMenu)
-
 
 export class NumberWindow {
   private static id = 0
@@ -62,7 +45,6 @@ export class NumberWindow {
 @Component
 export default class Sample6 extends Vue {
   numberWindows: NumberWindow[] = _.range(3).map(i => new NumberWindow())
-
   newRandomNumber() {
     this.numberWindows.push(new NumberWindow())
   }

@@ -2,17 +2,21 @@
   <transition name="fade" @after-leave="$emit('close')" @after-enter="$emit('open')">
     <div v-show="isOpen" class="window" :style="styleWindow" ref="window" @mousedown="activate" @touchstart="activate">
       <div class="titlebar" :style="styleTitlebar" ref="titlebar">
-        <div class="title">
-          <template v-if="$slots.title">
-            <slot name="title" />
+        <my-header>
+          <div class="title">
+            <template v-if="$slots.title">
+              <slot name="title" />
+            </template>
+            <template v-else>{{title}}</template>
+          </div>
+          <template v-slot:closeButton v-if="closeButton">
+            <my-button class="close" @click="closeButtonClick"></my-button>
           </template>
-          <template v-else>{{title}}</template>
-        </div>
-        <template v-if="closeButton">
-          <my-button @click="closeButtonClick">&times;</my-button>
-        </template>
+        </my-header>
       </div>
       <div class="content" :style="styleContent" ref="content">
+        {{ uid }}
+        {{ queryKey }}
         <slot />
       </div>
     </div>
