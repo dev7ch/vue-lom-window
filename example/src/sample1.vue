@@ -1,7 +1,7 @@
 <template>
-  <hsc-window-style-metal>
+  <lom-window-style-metal>
 
-    <hsc-window title="Window 1">
+    <lom-window title="Window 1">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
@@ -11,9 +11,9 @@
         <legend>&beta;</legend>
         <input type="range" />
       </fieldset>
-    </hsc-window>
+    </lom-window>
 
-    <hsc-window title="Window 2">
+    <lom-window title="Window 2">
       Parameters:
       <fieldset>
         <legend>&gamma;</legend>
@@ -23,7 +23,7 @@
         <legend>&delta;</legend>
         <input type="range" />
       </fieldset>
-    </hsc-window>
+    </lom-window>
 
-  </hsc-window-style-metal>
+  </lom-window-style-metal>
 </template>

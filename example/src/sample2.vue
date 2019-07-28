@@ -1,7 +1,7 @@
 <template>
-  <hsc-window-style-metal>
+  <lom-window-style-metal>
 
-    <hsc-window title="Window 1" :closeButton="true" :isOpen.sync="isOpen">
+    <lom-window title="Window 1" :closeButton="true" :isOpen.sync="isOpen">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>
@@ -11,11 +11,11 @@
         <legend>&beta;</legend>
         <input type="range" />
       </fieldset>
-    </hsc-window>
+    </lom-window>
 
     <button @click="isOpen = ! isOpen">Toggle Window 1</button>
 
-  </hsc-window-style-metal>
+  </lom-window-style-metal>
 </template>
 
 

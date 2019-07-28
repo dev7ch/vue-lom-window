@@ -1,6 +1,6 @@
 <template>
-  <hsc-window-style-metal>
-    <hsc-window
+  <lom-window-style-metal>
+    <lom-window
       title="Drag Handle"
       :width="400"
       :height="300"
@@ -12,8 +12,8 @@
         class="box"
         @mousedown.stop.prevent="mousedown"
       ></div>
-    </hsc-window>
-  </hsc-window-style-metal>
+    </lom-window>
+  </lom-window-style-metal>
 </template>
 
 <script lang="ts">

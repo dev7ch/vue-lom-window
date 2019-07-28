@@ -14,7 +14,7 @@ This package is an implementation of window UI for PC environment as a Vue Compo
 * Configurable color theme
 * Built-in 3 color themes
 * Open / Close animation
-* Tested on Safari10, Chrome60, Firefox55, IE11, Edge38 For PCs 
+* Tested on Safari10, Chrome60, Firefox55, IE11, Edge38 For PCs
 * iOS Support 🎉
 
 ![Screenshot](./docs/screenshot.png)
@@ -44,8 +44,8 @@ Vue.use(require('@hscmap/vue-window'))
 # Example
 ```html
 <template>
-    <hsc-window-style-metal>
-        <hsc-window title="Window 1" >
+    <lom-window-style-metal>
+        <lom-window title="Window 1" >
             Parameters:
             <fieldset>
                 <legend>&alpha;</legend>
@@ -55,8 +55,8 @@ Vue.use(require('@hscmap/vue-window'))
                 <legend>&beta;</legend>
                 <input type="range" />
             </fieldset>
-        </hsc-window>
-    </hsc-window-style-metal>
+        </lom-window>
+    </lom-window-style-metal>
 </template>
 ```
 
