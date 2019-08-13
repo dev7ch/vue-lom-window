@@ -1,6 +1,6 @@
 {
   "name": "@dev7ch/vue-lom-window",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Vue component for draggable windows in vue js",
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",

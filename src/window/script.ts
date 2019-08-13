@@ -22,9 +22,6 @@ interface Rect {
   components: { MyButton, MyHeader }
 })
 export class WindowType extends Vue {
-  @Prop({ type: Boolean, default: true })
-  isOpen!: boolean
-
   @Prop({ type: String })
   uid!: string
 
@@ -62,7 +59,7 @@ export class WindowType extends Vue {
   windowStyle!: WindowStyle
 
   private zIndex = 'auto'
-
+  public isOpen = true
   draggableHelper?: DraggableHelper
   resizableHelper?: ResizableHelper
 
@@ -351,8 +348,7 @@ export class WindowType extends Vue {
 
 
   closeButtonClick() {
-    this.$emit('closebuttonclick')
-    this.$emit('update:isOpen', false)
+      this.isOpen = !this.isOpen
   }
 }
 

@@ -9,7 +9,7 @@
       </slot>
       <template v-if="$parent.closeButton">
         <span class="bullet bullet-red">
-          <slot name="closeButton" />
+          <slot name="closeButton"/>
         </span>
       </template>
     </div>
