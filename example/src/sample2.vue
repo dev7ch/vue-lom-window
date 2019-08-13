@@ -1,7 +1,7 @@
 <template>
   <lom-window-style-metal>
 
-    <lom-window title="Window 1" :closeButton="true" :isOpen.sync="isOpen">
+    <lom-window title="Window 1" :close-button="true" :isOpen.sync="isOpen">
       Parameters:
       <fieldset>
         <legend>&alpha;</legend>

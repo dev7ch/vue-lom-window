@@ -343,8 +343,10 @@ export class WindowType extends Vue {
           }
       }
     }
-    el.style.left = `${left}px`
-    el.style.top = `${top}px`
+    if (el.style) {
+      el.style.left = `${left}px`
+      el.style.top = `${top}px`
+    }
   }
 
 

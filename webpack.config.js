@@ -18,7 +18,6 @@ module.exports = {
             { test: /\.scss/, use: ["style-loader", "css-loader", "sass-loader",] },
             {
                 test: /\.ts$/, loader: 'ts-loader', options: {
-                    appendTsSuffixTo: [/\.vue$/],
                     compilerOptions: {
                         declaration: true,
                         declarationDir: "./lib/types",

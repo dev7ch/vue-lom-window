@@ -9,7 +9,7 @@
             </template>
             <template v-else>{{title}}</template>
           </div>
-          <template v-slot-scoped:closeButton v-if="closeButton">
+          <template v-slot:closeButton>
             <my-button class="close" @click="closeButtonClick"></my-button>
           </template>
         </my-header>

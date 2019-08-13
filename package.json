@@ -1,6 +1,6 @@
 {
   "name": "@dev7ch/vue-lom-window",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Vue component for draggable windows in vue js",
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
@@ -9,6 +9,7 @@
     "standalone/dist"
   ],
   "scripts": {
+    "dev": "yarn example-server",
     "prepare": "webpack --mode production ; npm run standalone",
     "watch": "webpack --mode development --watch",
     "example": "webpack --context example --config ./example/webpack.config.js --mode development",
