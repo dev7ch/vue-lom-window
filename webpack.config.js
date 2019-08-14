@@ -33,6 +33,9 @@ module.exports = {
             if (!request.match(/(?:^|!)(?:\.|\.\.)?\//))
                 return callback(null, `commonjs ${request}`)
             callback()
+        },
+        {
+            Vue: 'vue'
         }
     ],
     plugins: [
